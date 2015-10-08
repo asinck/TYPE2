@@ -1,0 +1,74 @@
+ClrHome
+Input "alpha? ",A
+Input "musmall0? ",M
+Input "musmallT? ",T
+Input "xbar? ",X
+Input "mu <,=,> (-1,0,1)",K
+Input "n? ",N
+Input "sigma? ",S
+ClrHome
+Output(1,1,"Calculating...")
+
+((X-M)/(S/sqrt(N)))->Z
+normalcdf(Z,10^99,0,1)->P
+0-10^99->E
+10^99->F
+If K!=0:Then
+	invNorm(A,0,1)->L
+	Else:invNorm(A/2,0,1)->L
+End
+
+If K!=0:Then
+	invNorm(1-A,0,1)->U
+	Else:invNorm(1-(A/2),0,1)->U
+End
+
+M+((L*S)/sqrt(N))->E
+M+((U*S)/sqrt(N))->F
+
+If K=1:(0-10^99)->E
+If K=(0-1):10^99->F
+
+normalcdf(E,F,T,(S/sqrt(N))->B
+ClrHome
+Output(1,1,"alpha: "):Output(1,3,A)
+
+Output(1,8,"side: ")
+If K<0:Then:Output(1,13,"mu<musmall0")
+	Else:If K=0:Then:Output(1,13,"mu=musmall0")
+		Else:Output(1,13,"mu>musmall0")
+	End
+End
+
+Output(2,1,"musmall0: "):Output(2,4,M)
+Output(2,8,"musmallT: "):Output(2,11,T)
+Output(3,1,"n: "):Output(3,3,N)
+Output(3,8,"xbar: "):Output(3,13,X)
+Output(4,1,"sigma: "):Output(4,3,S)
+Output(5,1,"p: "):Output(5,3,P)
+Output(6,1,"Zsmall0: "):Output(6,4,Z)
+Output(7,1,"beta: "):Output(7,3,B)
+Output(8,1,"T: "):Output(8,3,T)
+If K<0:Then
+	If X>E:Then
+		Output(8,1,"Fail to Reject Hsmall0")
+		Else
+		Output(8,1,"Reject Hsmall0")
+	End
+End
+If K=0:Then
+	If X>E and X<F:Then
+		Output(8,1,"Fail to Reject Hsmall0")
+		Else:
+		Output(8,1,"Reject Hsmall0")
+	End
+End
+If K=1:Then
+	If X<F:Then
+		Output(8,1,"Fail to Reject Hsmall0")
+		Else:
+		Output(8,1,"Reject Hsmall0")
+	End
+End
+Pause 
+ClrHome
