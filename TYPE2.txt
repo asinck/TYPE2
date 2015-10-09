@@ -1,4 +1,20 @@
 ClrHome
+
+A->L1(dim(L1)+1)
+B->L1(dim(L1)+1)
+E->L1(dim(L1)+1)
+F->L1(dim(L1)+1)
+K->L1(dim(L1)+1)
+L->L1(dim(L1)+1)
+M->L1(dim(L1)+1)
+N->L1(dim(L1)+1)
+P->L1(dim(L1)+1)
+S->L1(dim(L1)+1)
+T->L1(dim(L1)+1)
+U->L1(dim(L1)+1)
+X->L1(dim(L1)+1)
+Z->L1(dim(L1)+1)
+
 Input "alpha? ",A
 Input "musmall0? ",M
 Input "musmallT? ",T
@@ -71,4 +87,22 @@ If K=1:Then
 	End
 End
 Pause 
+ClrHome
+Output(1,1,"Reseting variables...")
+
+L1(dim(L1)-13)->A
+L1(dim(L1)-12)->B
+L1(dim(L1)-11)->E
+L1(dim(L1)-10)->F
+L1(dim(L1)-9)->K
+L1(dim(L1)-8)->L
+L1(dim(L1)-7)->M
+L1(dim(L1)-6)->N
+L1(dim(L1)-5)->P
+L1(dim(L1)-4)->S
+L1(dim(L1)-3)->T
+L1(dim(L1)-2)->U
+L1(dim(L1)-1)->X
+L1(dim(L1))->Z
+seq(L1(X),X,1,dim(L1)-14)->L1
 ClrHome
