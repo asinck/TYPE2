@@ -6,9 +6,9 @@ NOTE: This program is offered without any guarantee of
 * it working,
 * it giving correct results,
 * it not ruining your calculator,
-* it keeping your variables (It will overwrite them. Period.),
+* it keeping your variables,
 * it not ending the world. 
 
 By downloading and/or using it, you accept all responsibilty for any damages stemming from the program or the use thereof. You also accept any responsibility for damages to your calculator, your computer, or other damages resulting from trying to do anything mentioned (ie, using the program, using the web site, trying to connect your calculator to your computer, editing a .txt file, etc).
 
-About the variables: I wrote this program to use several letters as variables (for instance, it stores the β value in B). The letters used will be overwritten with whatever values the program puts in them. If you have numbers stored in these letters, the values will be lost because the program doesn't put them back. 
+About the variables: I wrote this program to use several letters as variables (for instance, it stores the β value in B). This program temporarily stores all the variables' values in a list (L1), and puts the values back at the end of the program and restores L1 to its original state. However, if the program is exited partway through, you're going to have to reset those values by hand; they should be in L1.
